@@ -2,6 +2,7 @@ package com.newspost.view
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,6 +11,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.newspost.R
 import com.newspost.databinding.ActivityWriteNewsBinding
+import com.newspost.service.Api
 import java.util.*
 
 class WriteNews : AppCompatActivity() {
@@ -24,19 +26,35 @@ class WriteNews : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_content_write_news)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         onCLickPublish()
+        AddToDB()
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_write_news)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    fun AddToDB() {
+        binding.btnPublish.setOnClickListener {
+            verifyInputs()
+        }
+    }
+
+    fun verifyInputs() {
+        var titulo = binding.title.text.toString()
+        var noticia = binding.writeNew.text.toString()
+        var data = binding.publishDate.text.toString()
+        var autor = binding.autor.text.toString()
+
+        when {
+            titulo.isEmpty() -> binding.title.error = "Preencha o titulo"
+            noticia.isEmpty() -> binding.writeNew.error = "Escreva uma noticia"
+            data.isEmpty() -> binding.publishDate.error = "Coloque uma data"
+            autor.isEmpty() -> binding.autor.error = "Coloque um Autor"
+            else -> {
+                val api = Api()
+                api.addPost(titulo, data, noticia, autor)
+            }
+        }
     }
 
     fun onCLickPublish() {

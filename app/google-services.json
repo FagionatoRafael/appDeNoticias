@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "618501836386",
+    "project_id": "postnews-d732e",
+    "storage_bucket": "postnews-d732e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618501836386:android:4e09f1ebf6d7c47575cb3b",
+        "android_client_info": {
+          "package_name": "com.newspost"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4036uYbKHvyu0QGdXh9M-mG3WQ5ffCbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

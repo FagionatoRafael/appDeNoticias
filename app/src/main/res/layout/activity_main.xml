@@ -12,85 +12,29 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/writeNewPost"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        />
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnPostNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post news"
+            android:textColor="@color/green_200"
+            android:backgroundTint="@color/white"/>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/title"
-        android:paddingLeft="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:maxLines="1"
-        android:hint="@string/title"
-        />
+        <Button
+            android:id="@+id/btnReadNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Read News"
+            android:textColor="@color/green_200"
+            android:backgroundTint="@color/white"/>
+    </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/writeNew"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="start"
-        android:background="@color/white"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/writeNewPost"
-        android:inputType="textMultiLine"
-        />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:paddingLeft="10dp"
-        android:id="@+id/publishDate"
-        android:enabled="false"
-        android:allowClickWhenDisabled="true"
-        android:textColor="@color/black"
-        android:layout_width="match_parent"
-        android:maxLength="10"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/publishDate"
-        />
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/autor"
-        android:paddingLeft="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:maxLines="1"
-        android:hint="@string/autor"
-        />
-
-    <Button
-        android:id="@+id/btnPublish"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/publishNews"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:padding="10dp"
-        android:backgroundTint="@color/green_200"
-        android:textStyle="bold"
-        />
 
 </LinearLayout>
 </ScrollView>
